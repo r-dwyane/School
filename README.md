@@ -1,2 +1,2 @@
-# School
+# SWU
 School Coding Activities
