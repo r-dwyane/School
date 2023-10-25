@@ -1,2 +1,2 @@
 # SWU
-School Coding Activities
+🎒School Coding Activities
