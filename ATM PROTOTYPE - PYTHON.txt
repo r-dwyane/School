@@ -1,0 +1,270 @@
+import datetime, os, time
+
+class ATM:
+
+    def __init__(account):
+        account.balance = 100
+
+    def display_balance(account):
+        print(f"\033[32mYour balance is: ${account.balance}\033[0m")
+        time.sleep(1)
+        os.system("cls")
+
+    def withdraw_cash(account, amount):
+        global total
+        if amount <= account.balance:
+            account.balance -= amount
+            total = amount
+            print(f"\033[32mWITHDRAWN: ${total}\033[0m")
+        else:
+            print("\033[31mInsufficient balance.\033[0m")
+            time.sleep(1)
+            os.system("cls")
+
+    def deposit_cash(account, amount):
+        account.balance += amount
+        os.system("cls")
+
+    def main_menu(account):
+        while True:
+            print("\n\033[32mMain Menu:")
+            print("1. Check Balance")
+            print("2. Withdraw Cash")
+            print("3. Deposit Cash")
+            print("4. Quit")
+
+            choice = float(input("Select menu Transaction (1-4): \033[0m"))
+            os.system("cls")
+            if choice == 1:
+                account.display_balance()
+
+                os.system("cls")
+                decide = input("\033[32mDo you want to exit now? Press 1 if yes. 0 if no.\n")
+                if decide == "1":
+                    time.sleep(1)
+                    print("Loading....")
+                    time.sleep(1)
+                    os.system("cls")
+                    print("Please wait for your receipt to be printed.")
+                    time.sleep(1)
+
+                    print("")
+                    print("\033[32m=========== LUX BANK ===================")
+                    now = datetime.datetime.now()
+                    print("DATE:", now.strftime("%y-%m-%d"))
+                    now = datetime.datetime.now()
+                    print("TIME:", now.strftime("%H:%M:%S"))
+                    print("========================================")
+                    print(f"ACCOUNT NUMBER: {account_number}")
+                    print(f"CUSTOMER NAME: {full}")
+                    print("WITHDRAW FROM: BDO")
+                    print("TRANSACTION TYPE: BALANCE INQUIRY")
+                    print("========================================")
+                    print(f"AMOUNT: ${0}")
+                    print(f"ACCOUNT BALANCE: ${account.balance}")
+                    print("========================================")
+                    print("PLEASE RETAIN OR DISPOSE IT THOUGHTFULLY\033[0m")
+
+                    print("\033[32mTHANK YOU FOR USING LUX BANK!")
+                    break
+                else:
+                    os.system("cls")
+
+            elif choice == 2:
+                account.withdraw_menu()
+
+                decide = input("\033[32mDo you want to exit now? Press 1 if yes. 0 if no.\n")
+                if decide == "1":
+                    rec = input("\033[32mDo you want a receipt? Press 1 if yes. 0 if no.\n")
+                    if rec == "1":
+
+                        time.sleep(1)
+                        print("Loading....")
+                        time.sleep(1)
+                        os.system("cls")
+                        print("Please wait for your receipt to be printed.")
+                        time.sleep(1)
+
+                        print("")
+                        print("\033[32m============= LUX BANK ================")
+                        now = datetime.datetime.now()
+                        print("DATE:", now.strftime("%y-%m-%d"))
+                        now = datetime.datetime.now()
+                        print("TIME:", now.strftime("%H:%M:%S"))
+                        print("========================================")
+                        print(f"ACCOUNT NUMBER: {account_number}")
+                        print(f"CUSTOMER NAME: {full}")
+                        print("WITHDRAW FROM: LUX")
+                        print("TRANSACTION TYPE: WITHDRAWAL")
+                        print("========================================")
+                        print(f"AMOUNT: ${total}")
+                        print(f"ACCOUNT BALANCE: ${account.balance}")
+                        print("========================================")
+                        print("PLEASE RETAIN OR DISPOSE IT THOUGHTFULLY\033[0m")
+
+                        print("\033[32mTHANK YOU FOR USING LUX BANK!")
+                    else:
+                        print("")
+                        print("\033[32mTHANK YOU FOR USING LUX BANK!")
+                        print("")
+                    break
+
+                os.system("cls")
+            elif choice == 3:
+
+                deposit_amount = float(input("\033[32mEnter Deposit Amount: $"))
+                account.deposit_cash(deposit_amount)
+                print(f"\033[32mDeposited ${deposit_amount} successfully.\033[0m")
+
+                decide = input("\033[32mDo you want to exit now? Press 1 if yes. 0 if no.\n")
+                if decide == "1":
+                    rec = input("\033[32mDo you want a receipt? Press 1 if yes. 0 if no.\n")
+                    if rec == "1":
+
+                        time.sleep(1)
+                        print("Loading....")
+                        time.sleep(1)
+                        os.system("cls")
+                        print("Please wait for your receipt to be printed.")
+                        time.sleep(1)
+
+                        print("")
+                        print("\033[32m=========== LUX BANK ===========")
+                        now = datetime.datetime.now()
+                        print("DATE:", now.strftime("%y-%m-%d"))
+                        now = datetime.datetime.now()
+                        print("TIME:", now.strftime("%H:%M:%S"))
+                        print("========================================")
+                        print(f"ACCOUNT NUMBER: {account_number}")
+                        print(f"CUSTOMER NAME: {full}")
+                        print("DEPOSIT FROM: LUX")
+                        print("TRANSACTION TYPE: DEPOSIT")
+                        print(f"AMOUNT: ${deposit_amount}")
+                        print("========================================")
+                        print(f"ACCOUNT BALANCE: ${account.balance - deposit_amount}")
+                        print(f"NEW BALANCE: ${account.balance}")
+                        print("========================================")
+                        print("PLEASE RETAIN OR DISPOSE IT THOUGHTFULLY\033[0m")
+
+                        print("\033[32mTHANK YOU FOR USING LUX BANK!")
+                    else:
+                        print("")
+                        print("\033[32mTHANK YOU FOR USING LUX BANK!")
+                        print("")
+                    break
+
+                os.system("cls")
+            elif choice == 4:
+                print("\033[32mTHANK YOU FOR USING LUX BANK!")
+                break
+            else:
+                print("\033[31mInvalid choice. Please select a valid option.\033[0m")
+                time.sleep(1)
+                os.system("cls")
+
+    def withdraw_menu(account):
+        ten = 10; twenty = 20; fifty = 50; hundred = 100;
+        print("\n\033[32mWithdraw Menu:")
+        print("1. $10")
+        print("2. $20")
+        print("3. $50")
+        print("4. $100")
+        print("5. Enter amount")
+        choice = float(input("Choose withdraw amount (1-5): "))
+        os.system("cls")
+        if choice == 1:
+            account.withdraw_cash(ten)
+        elif choice == 2:
+            account.withdraw_cash(twenty)
+        elif choice == 3:
+            account.withdraw_cash(fifty)
+        elif choice == 4:
+            account.withdraw_cash(hundred)
+        elif choice == 5:
+            wd = float(input("\033[32mEnter withdraw amount: "))
+            os.system("cls")
+            if wd > account.balance:
+                print("\033[31mInsufficient balance.\033[0m")
+                time.sleep(1)
+                os.system("cls")
+            else:
+                account.withdraw_cash(wd)
+        else:
+            print("\033[31mInvalid choice. Please select a valid option.\033[0m")
+            time.sleep(1)
+            os.system("cls")
+
+    def date_now():
+        now = datetime.datetime.now()
+        print("Date:", now.strftime("%y-%m-%d"))
+
+    def time_now():
+        now = datetime.datetime.now()
+        print("Time:", now.strftime("%H:%M:%S"))
+
+
+#LOGIN
+
+acc_number = {123456 : 4242}
+global name, full;
+hello = input("\033[32mDo you have an account? Press 1 for yes. 0 create an account.\n")
+if hello == "1":
+    attempts = 0
+    while attempts < 5:
+
+        global account_number
+        account_number = int(input("\033[32mACCOUNT NUMBER: "))
+        password = int(input("\033[32mPIN: "))
+        name = input("Enter your full name: ")
+        full = name.upper()
+
+        if account_number in acc_number and acc_number[account_number] == password:
+            print(f"WELCOME {full}!")
+            if __name__ == "__main__":
+                atm = ATM()
+                atm.main_menu()
+            break
+        else:
+            attempts += 1
+            if attempts >= 5:
+                print("\033[31mNo more attempts left. Please try again later.\033[0m")
+                break
+            else:
+                print("\033[31mLog in failed. Please try again.\033[0m")
+
+else:
+    while True:
+        number = int(input("\033[32mCreate account number: "))
+        pin = int(input("\033[32mCreate pin: "))
+        fname = input("Enter your full name: ")
+        print()
+        attempts = 0
+
+        if number not in acc_number:
+            acc_number[number] = pin
+            while attempts < 5:  # Set a maximum of 5 login attempts
+                account_number = int(input("\033[32mACCOUNT NUMBER: "))
+                password = int(input("\033[32mPIN: "))
+                name = input("Enter your full name: ")
+                full = name.upper()
+
+                if account_number in acc_number and acc_number[account_number] == password:
+                    print(f"WELCOME {full}!")
+                    if __name__ == "__main__":
+                       atm = ATM()
+                       atm.main_menu()
+                    break
+                else:
+                    attempts += 1
+                    if attempts >= 5:
+                        print("\033[31mNo more attempts left. Please try again later.\033[0m")
+                        break
+                    else:
+                        print("\033[31mLog in failed. Please try again.\033[0m")
+            break
+        else:
+            print("ACCOUNT ALREADY EXISTED")
+            print()
+
+
+

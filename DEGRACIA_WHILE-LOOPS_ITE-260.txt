@@ -1,0 +1,47 @@
+1.)
+i = 10
+while i > 0:
+    print(i)
+    i -= 1
+
+2.)
+print("Enter 5 numbers: ")
+sum = 0
+i = 1
+while i <= 5:
+    num = int(input(""))
+    sum += num
+    i += 1
+print("Sum: ", sum)
+
+3.)
+i = int(input("Enter a number: "))
+j = 1
+while j <= i:
+    print(j)
+    j = j + 1
+
+
+4.)
+message = input("Enter a message: ")
+i = int(input("Enter how many times you want to print it: "))
+j = 1
+while j <= i:
+    print("Count: ", j)
+    print(message)
+    j = j + 1
+
+
+5.)
+secret = "hello"
+i = 1
+while i > 0:
+    answer = input("Enter the secret word: ")
+    if answer == "Hello":
+        print("Almost there!")
+    elif answer != secret:
+        print("Try Again.")
+    else:
+        print("Congratulations! You guessed the secret word!")
+        break
+

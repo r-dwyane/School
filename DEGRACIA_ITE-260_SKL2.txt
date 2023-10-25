@@ -1,0 +1,39 @@
+1.)
+num = int(input("Enter a number: "))
+
+if num > 0:
+    print("POSITIVE")
+else:
+    print("NEGATIVE")
+
+2.)
+name = input("Enter your name: ")
+grade_1 = int(input("Enter grade for Subject 1: "))
+grade_2 = int(input("Enter grade for Subject 2: "))
+grade_3 = int(input("Enter grade for Subject 3: "))
+grade_4 = int(input("Enter grade for Subject 4: "))
+grade_5 = int(input("Enter grade for Subject 5: "))
+
+average = (grade_1 + grade_2 + grade_3 + grade_4 + grade_5) /5
+print( "General Average: " + str(average))
+
+if average > 85:
+    print(name + ": " + str(average) + " WITH HIGHEST HONOR")
+elif average > 80:
+    print(name + ": " + str(average) + " WITH HONOR")
+elif average > 75:
+    print(name + ": " + str(average) + " PASSED")
+elif average < 75:
+    print(name + ": " + str(average) + " FAILED")
+
+3.)
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+name = "Rhon123"
+pw = "123456789"
+
+if username == name and password == pw:
+    print("LOGIN SUCCESSFULLY")
+else:
+    print("INVALID CREDENTIALS")

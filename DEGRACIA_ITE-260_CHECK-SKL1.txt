@@ -1,0 +1,20 @@
+1.)
+print("Please share the information asked for:\n")
+name = input("Enter name: ")
+age = int(input("Enter age: "))
+
+print(name + "\n" + str(age))
+
+2.)
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+sum = x + y
+print(str(x) + " + " + str(y) + " = " + str(sum))
+
+3.)
+cars = ["Toyota","Mazda","Lambo","Suzuki","Tesla"]
+cars.append("Honda")
+cars.pop(2)
+
+print(cars)
+

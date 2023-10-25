@@ -1,0 +1,102 @@
+username = "hello"
+password = "world"
+hello = username
+world = password
+attempt = 0
+
+while attempt < 3:
+    un = input("Enter username: ")
+    pw = input("Enter password: ")
+    if un != hello and pw != world:
+        print("Invalid Credentials! Try Again.")
+        attempt += 1
+        if attempt >= 3:
+            print("No more attempts left. Try again later.")
+    else:
+        print("Welcome ", un," ", pw)
+        print("Note: Answers must be in lower case.")
+        print("")
+        sas_11 = {"1.) Enables a particular set of conditions to be executed repeatedly until a condition is satisfied.":"for loop",
+                  "2.) ______ is the rules that define the combinations of symbols that are considered to be correctly.":"syntax",
+                  "3.) Allows using one loop inside another loop.":"nested loop",
+                  "4.) A loop that is never finished.":"infinite loop",
+                  "5.) An alternative way of iterating through each item is by index offset into the sequence itself.":"iterating by sequence index",
+                  "6.) Generates a set of whole numbers starting from start to stop-1.":"range(start, stop)",
+                  "7.) Generates a set of whole numbers starting from 0 to (n-1).":"range (n)",
+                  "8.) The default step_size is 1 which is why when we didn’t specify the step_size, the numbers generated are having a difference of 1.":"range (start, stop, step_size)",
+                  "9.) Loop which is similar to for each loop in other languages. ":"for n",
+                  "10.) n supports having an else statement associated with a loop statement.":"else statement"}
+        sas_12 = {"1.) In a loop alter the execution sequence.": "control statement",
+                  "2.) Is used inside the loop to exit out of the loop": "break statement",
+                  "3.is considered a no-operation statement.)": "pass statement",
+                  "4.)allows you to bypass the current iteration of any loop.": "continue statement",
+                  "5.)variable is incremented by 1 with each iteration.": "count",
+                  "6.)the variable count is initialized as.": "0",
+                  "7.)It is generally used to indicate or unimplemented functions and loops.": "null",
+                  "8.)to follow up on and/or close out an area of discussion.": "end of the loop",
+                  "9.)a data frame that is transmitted between network points on a token ring network.": "token",
+                  "10.)tells a program to do nothing if conditional statement is satisfied.": "no operation statement"}
+        sas_13 = {"1.) ______ are used on conditional statements that yield a result of either a TRUE or FALSE value.": "logical operators",
+                  "2.) True if both the operands are true.": "and or logical and",
+                  "3.) True if the operand is false.": "logical not",
+                  "4.) True if either of the operands are true.": "logical or",
+                  "5.) ______ takes at least two boolean expressions and returns True if any one of the expressions is True.": "or operator",
+                  "6.) ______ is only valid for one condition.": "not operator",
+                  "7.) ______ listed when you mix them in an expression.": "operator precedence",
+                  "8.) It is a programming concept in which the compiler skips the execution or evaluation of some sub-expressions in a logical expression.": "short-circuit evaluation",
+                  "9.) ______ provides a method for mapping out the possible truth values in an expression and to determine their outcomes": "truth table",
+                  "10.) ______ determines whether two criteria are True at the same time.": "and operator"}
+
+        correct_11 = 0
+        correct_12 = 0
+        correct_13 = 0
+
+        print("SAS-11: LOOPS AND ITERATION")
+        for x in sas_11:
+            answer_key = sas_11[x]
+            print(x)
+            answer = input("Please type your answer: ")
+            if (answer == answer_key):
+                correct_11 += 1
+        print("Total Score for SAS 11: ", str(correct_11) , "/", str(15))
+
+        print("")
+        print("SAS-12: LOOPS CONTROL STATEMENTS")
+        for y in sas_12:
+            answer_key = sas_12[y]
+            print(y)
+            answer = input("Please type your answer: ")
+            if (answer == answer_key):
+                correct_12 += 1
+        print("Total Score for SAS 12: ", str(correct_12) , "/", str(15))
+
+        print("")
+        print("SAS-13: LOGICAL OPERATORS")
+        for z in sas_13:
+            answer_key = sas_13[z]
+            print(z)
+            answer = input("Please type your answer: ")
+            if (answer == answer_key):
+                correct_13 += 1
+        print("")
+        print("Total Score for SAS 13: ", str(correct_13) , "/", str(15))
+
+        score = correct_11 + correct_12 + correct_13
+        total = 30
+
+        if score == 30:
+            print("Score: " + str(score))
+            print("You got a perfect score.")
+        elif score >= 21:
+            print("Score: " + str(score))
+            print("You got a perfect score.")
+        elif score > 15:
+            print("Score: " + str(score))
+            print("Great Score.")
+        elif score == 15 and score >= 10:
+            print("Score: " + str(score))
+            print("You passed.")
+        else:
+            print("Score: " + str(score))
+            print("You failed.")
+        break

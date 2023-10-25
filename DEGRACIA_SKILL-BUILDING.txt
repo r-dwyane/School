@@ -1,0 +1,103 @@
+A. CODE EVALUATION
+1.)
+x = 0
+a = 5
+b = 5
+if a > 0:
+    if b < 0:
+        x = x + 5
+    elif a > 5:
+        x = x + 4
+    else:
+        x = x + 3
+else:
+    x = x + 2
+print(x)
+
+OUTPUT:
+3
+
+2.)
+NUM1 = 50
+NUM2 = 500
+
+print("I") if NUM1 > NUM2 else print("LOVE") if NUM1 == NUM2 else print("PYTHON")
+
+OUTPUT:
+PYTHON
+
+3.)
+x = 0
+a = 5
+b = -5
+if a > 0:
+    if b < 0:
+        x = x + 5
+    elif a > 5:
+        x =  x + 4
+    else:
+        x = x + 3
+else:
+    x = x + 2
+
+print(x)
+
+OUTPUT:
+5
+
+B. CODING TIME
+
+fname = input("First Name: ")
+lname = input("Last Name: ")
+salary = int(input("Salary: "))
+rating = int(input("Rating: "))
+
+print("")
+print("=======================================")
+print("")
+if salary > 0:
+    if rating == 1:
+        bonus = salary * 0.1
+        total = salary + bonus
+    elif rating == 2:
+        bonus = salary * 0.06
+        total = salary + bonus
+    elif rating == 3:
+        bonus = salary * 0.03
+        total = salary + bonus
+    elif rating == 4:
+        bonus = 0
+        total = salary
+    else:
+        bonus = 0
+        total = salary
+        rating = "INVALID RATING"
+else:
+    print("")
+    bonus = 0
+    total = 0
+print("Name: ", fname, lname)
+print("Salary: " + str(salary))
+print("Rating: " + str(rating))
+print("Bonus: " + str(bonus))
+print("Total: " + str(total))
+
+C. CHECK FOR UNDERSTANDING
+
+1.) 
+if x == y and z == a:
+    print("Python")
+
+2.) 
+if x == y or z == a:
+    print("Python")
+
+3.)
+print("One is equal to one!") if 1 == 1 else print("One is not equal to one.")
+
+4.)
+print("Yes") if 1 == 1 else print("No")
+
+5.)
+if 1 == 1:
+    print("One is equal to one!")
